@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="D:/OMar/css/style.css">
+    <link href = "D:/OMar/font/Gilroy-Light.otf" rel = "Gilroy-Light" type = "text/css" >
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+  <script type="text/javascript" src="js/less.lib.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script type="text/javascript" src="scripts.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){//страница загрузилась
+        $('.tool-item').hover(function(){	//при наведении на элемент:
+          var helptext = $(this).attr('data') 	//текст подсказки
+          $('.tooltip-block').html(helptext).show();	//размещаем текст подсказки в блок тултипа и делаем его видимым
+          //далее устанавливаем тултипу значения позиции с помощью абсолютного позиционирования:
+          //позиция элемента сверху + высота элемента -> $(this).offset().top+$(this).height()
+          //позиция элемента слева -> $(this).offset().left
+          $('.tooltip-block').offset({top:$(this).offset().top+$(this).height(),left:$(this).offset().left});
+        },function(){
+          $('.tooltip-block').hide();	//скрываем тултип 
+        });
+      });
+      //в итоге подсказка окажется ровно под элементом наведения
+    </script>
+  <script>
+    window.onload = function(){
+            var image = document.getElementById('image');
+            image.onclick = function(event){
+                event = event || window.event;
+                if (event.shiftKey) {
+                    this.style.zoom = +this.style.zoom / 1.2;
+                } else if (!event.ctrlKey) {
+                    this.style.zoom = +this.style.zoom * 1.2;
+                } else {
+                    this.style.zoom = "1";
+                }
+            }
+        };
+  </script>
+  <script>
+    ln.onclick = function() {
+      let start = Date.now();
+
+      let timer = setInterval(function() {
+        let timePassed = Date.now() - start;
+
+        ln.style.left = timePassed / 5 + 'px';
+
+        if (timePassed > 2000) clearInterval(timer);
+
+      }, 20);
+    }
+  </script>
+
+    <title>
+    Omar Market
+</title>
+</head>
+<body>
+  <script src="js.js"></script>
+  <header class="header">
+    <script>
+      alert("Реклама\nСок натуральный 100% с мякотью Яблоко-Персик “Сады Придонья”\n 6 шт. за 2 058₸");/*окно рекламы*/
+    </script>
+      <div class="navigation">
+        <div class="menu1">
+         <ul class="menu1">
+            <li><a href="#" id="akc"> Акции</a></li>
+            <li><a href="#" id="set">Сеты</a></li>
+            <li><a href="#">Новости</a></li>
+            <li><a href="#">Доставка</a></li>
+            <li><a href="#">Условия</a></li>
+         </ul>
+        </div>
+        <div class="m2">
+          <select class="m1">
+            <option>Актобе</option>
+            <option>Аксай</option>
+          </select>
+          <select class="m2">
+            <option>RU</option>
+            <option>ENG</option>
+          </select>
+        </div>
+      </div>
+        <div class="poisk">
+            <div class="logo">
+                <a href="#"><img src="D:/OMar/img/logo.png" height="46px" width="134" alt="1"/></a>
+            </div>
+            <div class="search-box">
+                <input class="search-txt" type="text"  placeholder="Какой товар вы ищете?">
+                <a class="search-btn" href="#" ><img src="D:/OMar/img/search.png" id="search" alt="1"/> </a>
+            </div>
+            <button class="profil" data-tooltip="Страница с вашими данными">Профиль
+             <a class="profil-btn" href="#" ><img src="D:/OMar/img/user.png" id="user" width="18" height="20" alt="1"/></a>
+            </button>
+            <button class="sum" data-tooltip="Сумма заказа">2600
+              <a class="sum-btn" href="#" ><img src="D:/OMar/img/coin.png" id="coin" width="22" height="16" alt="1"/></a>
+            </button>
+            <button data-tooltip="Ваши заказы" class="korzina">
+              <a class="korzina-btn" href="#" ><img src="D:/OMar/img/shopping-cart.png" id="shopping-cart" width="24" height="24" alt="1"/></a>
+            </button>
+        </div>
+        <div class="menu2">
+          <ul id="menu2">
+           <li><a href="#"><img  src="D:/OMar/img/image 1.png" id="icon" alt="1"/>Все категории</a></li>
+            <li><a href="#"><img  src="D:/OMar/img/image 2.png" id="icon" alt="1"/>Напитки</a></li>
+            <li><a href="#"><img  src="D:/OMar/img/image 3.png" id="icon" alt="1"/>Бакалея</a></li>
+            <li><a href="#"><img  src="D:/OMar/img/image 4.png" id="icon" alt="1"/>Замороженная продукция</a></li>
+            <li><a href="#"><img  src="D:/OMar/img/image 5.png" id="icon" alt="1"/>Овощи и фрукты</a></li>
+            <li><a href="#"><img  src="D:/OMar/img/image 6.png" id="icon" alt="1"/>Все для дома</a></li>
+            <li><a href="#"><img  src="D:/OMar/img/image 7.png" id="icon" alt="1"/>Молочные продукты</a></li>
+          </ul>
+        </div>
+  </header>
+    <div class="slaider">
+        <div class="sl1">
+          <div class="grid">
+            <div class="txt">
+             <p>Мобильное приложение<br>
+              Omar Market</p>
+            </div>
+            <div class="lg">
+             <img src="D:/OMar/img/logo 2.png" width="64" height="26" alt="1"/> 
+            </div>
+            <div class="gp">
+             <p>Скачайте наше <br>мобильное приложение</p>
+             <img src="D:/OMar/img/GP.png" height="36px" width="103px" alt="1"/>
+             <img src="D:/OMar/img/AP.png" height="36px" width="103px" alt="1"/> 
+            </div>
+            <div class="hand">
+             <img src="D:/OMar/img/hand.png" id="hand"alt="1"/>
+            </div>
+          <!--<div class="grid">
+            <div class="txt">Слайд 2</div>
+          </div>
+          <div class="grid">
+            <div class="txt">Слайд 3</div>
+          </div>-->
+          <a class="prev" onclick="minusSlide()">&#10094;</a>
+           <a class="next" onclick="plusSlide()">&#10095;</a>
+         </div>
+        </div>
+         <div class="slider-dots">
+          <span class="slider-dots_item" onclick="currentSlide(1)"></span> 
+          <span class="slider-dots_item" onclick="currentSlide(2)"></span> 
+          <span class="slider-dots_item" onclick="currentSlide(3)"></span>
+          <span class="slider-dots_item" onclick="currentSlide(4)"></span> 
+          <span class="slider-dots_item" onclick="currentSlide(5)"></span> 
+          <span class="slider-dots_item" onclick="currentSlide(6)"></span> 
+        </div>
+        <script src="sl.js"></script>
+        <div class="img1">
+            <img src="D:/OMar/img/avoc.png" height="200px" width="450" border-radius="16px" alt="1"/>
+            <span>Авокадо по скидке</span><span id="s">50%</span>
+            <span id="podr"><a href="#">Подробнее</a><img src="D:/OMar/img/chevron-down.png" height="16px" width="16px" alt="1"/> </span>
+        </div>
+        <div class="img2">
+            <img src="D:/OMar/img/apple.png" id="apple" height="200px" width="450" border-radius="16px" alt="1"/>
+            <span>Акция на все сорта яблок все выходные</span>
+        </div>
+    </div>
+    <h1 class="tool-item" data="Новинки ....">Новинки <button id="left"><img src="D:/OMar/img/влево.png" height="40px" width="40" alt="влево"/></button><button id="right"><img src="D:/OMar/img/вправо.png" height="40px" width="40" alt="вправо"/></button></h1>
+    <div class="cont1">
+        <div class="box-1">
+          <tag class="new">Новинка</tag>
+            <img src="D:/OMar/img/img1.png" height="270px" width="270px" alt="Сок"/>
+            <p>Сок натуральный 100% с мякотью Яблоко-Персик “Сады Придонья”</p>
+            <p id="OMar">Omar Market</p>
+            <img src="D:/OMar/img/ln.png" id="ln" width="270px" alt="Линия"/>
+            <nav class="table">
+              <nav class="ct1">
+                <p>Литраж</p>
+                  <p>2 л.</p>
+              </nav>
+               <nav class="ct2">
+                   <p>В ящике</p>
+                   <p>6 шт.</p>
+               </nav>
+              <nav class="ct3">
+                   <p>Цена</p>
+                    <p>1 200₸</p>
+               </nav>
+               </nav>
+            <a href="#" id="pod">Подробнее <img src="D:/OMar/img/down.png" id="podimg" height="20px" width="20px" alt="Подробнее"/></a>            
+              </div>
+        <div class="box-2">
+          <tag class="new">Новинка</tag>
+            <img src="D:/OMar/img/img 2.png" id="image" height="270px" width="270px" alt="Напиток" style = "zoom: 1"/>
+            <p>Напиток энергетический Gorilla</p>
+            <p id="OMar">Omar Market</p>
+            <img src="D:/OMar/img/ln.png" id="ln" width="270px" alt="Линия"/>
+            <nav class="table">
+              <nav class="ct1">
+                <p>Литраж</p>
+                  <p>0.5 л.</p>
+              </nav>
+               <nav class="ct2">
+                   <p>В ящике</p>
+                   <p>24 шт.</p>
+               </nav>
+              <nav class="ct3">
+                   <p>Цена</p>
+                    <p>9 600₸</p>
+               </nav>
+            </nav>
+            <a href="#" id="pod">Подробнее <img src="D:/OMar/img/down.png" id="podimg" height="20px" width="20px" alt="Подробнее"/></a>            
+              </div>
+        <div class="box-3">
+          <tag class="new">Новинка</tag>
+          <tag class="ak">Акция</tag>
+          <tag class="ten">-10%</tag>
+          <!--<tag class="shopping"><img src="D:\OMar\img\shopping.png" height="20px" width="20px" alt="1"><p id="shopping">В корзине</p></tag>-->
+            <img src="D:/OMar/img/img 3.png" height="270px" width="270px" alt="Напиток"/>
+            <p>Напиток Coca-Cola</p>
+            <p id="OMar">Omar Market</p>
+            <img src="D:/OMar/img/ln.png" id="ln" width="270px" alt="Линия"/>
+            <nav class="table">
+              <nav class="ct1">
+                <p>Литраж</p>
+                  <p>0.5 л.</p>
+              </nav>
+               <nav class="ct2">
+                   <p>В ящике</p>
+                   <p>24 шт.</p>
+               </nav>
+              <nav class="ct3">
+                   <p>Цена</p>
+                    <p>5 400₸</p>
+              </nav>
+            </nav>
+              <a href="#" id="pod">Подробнее <img src="D:/OMar/img/down.png" id="podimg" height="20px" width="20px" alt="Подробнее"/></a>            
+            </div>
+        <div class="box-4">
+          <tag class="new">Новинка</tag>
+            <img src="D:/OMar/img/img 4.png" height="270px" width="270px" alt="Напиток"/>
+            <p>Напиток энергетический Gorilla</p>
+            <p id="OMar">Omar Market</p>
+            <img src="D:/OMar/img/ln.png" id="ln" width="270px" alt="Линия"/>
+            <nav class="table">
+              <nav class="ct1">
+                <p>Литраж</p>
+                  <p>0.5 л.</p>
+              </nav>
+               <nav class="ct2">
+                   <p>В ящике</p>
+                   <p>16 шт.</p>
+               </nav>
+              <nav class="ct3">
+                   <p>Цена</p>
+                    <p>6 400₸</p>
+               </nav>
+            </nav>     
+            <a href="#" id="pod">Подробнее <img src="D:/OMar/img/down.png" id="podimg" height="20px" width="20px" alt="Подробнее"/></a>           
+        </div>
+    </div>
+<div class="tooltip-elems">	
+<h1 class="tool-item" data="Для новогоднего стола ....">Для новогоднего стола<button id="left"><img src="D:/OMar/img/влево.png" height="40px" width="40" alt="влево"/></button><button id="right"><img src="D:/OMar/img/вправо.png" height="40px" width="40" alt="вправо"/></button></h1>
+<div class="cont2">
+    <div class="box-1">
+      <tag class="ak1">Акция</tag>
+      <tag class="tw">-20%</tag>
+        <img src="D:/OMar/img/img 5.png" height="270px" width="270px" alt="Скумбрия"/>
+        <p>Скумбрия Семь Морей холодного копчения<i id="tipOn" onmouseover="tip(this.parentNode,event)">...</i></p>
+        <div id="theTip" style="border: dotted; width:100; background-color:yellow; position:absolute;z-index:999;display:none;">
+          <kbd>Текст подсказки</kbd>
+          </div>
+        <p id="OMar">Omar Market</p>
+        <img src="D:/OMar/img/ln.png" id="ln" width="270px" alt="Линия"/>
+        <nav class="table">
+          <nav class="ct1">
+            <p>Вес</p>
+              <p>1 кг.</p>
+          </nav>
+           <nav class="ct2">
+               <p>В ящике</p>
+               <p>32 шт.</p>
+           </nav>
+          <nav class="ct3">
+               <p>Цена</p>
+                <p>15 360₸</p>
+           </nav>
+        </nav>
+        <a href="#" id="pod">Подробнее <img src="D:/OMar/img/down.png" id="podimg" height="20px" width="20px" alt="Подробнее"/></a>            
+    </div>
+    <div class="box-2">
+      <tag class="new">Новинка</tag>
+        <img src="D:/OMar/img/img 6.png" height="270px" width="270px" alt="Утка"/>
+        <p>Утка пекинская тушка замороженная</p>
+        <p id="OMar">Omar Market</p>
+        <img src="D:/OMar/img/ln.png" id="ln" width="270px" alt="Линия"/>
+        <nav class="table">
+          <nav class="ct1">
+            <p>Вес</p>
+              <p>1 кг.</p>
+          </nav>
+           <nav class="ct2">
+               <p>В ящике</p>
+               <p>4 шт.</p>
+           </nav>
+          <nav class="ct3">
+               <p>Цена</p>
+                <p>4 800₸</p>
+           </nav>
+        </nav>
+        <a href="#" id="pod">Подробнее <img src="D:/OMar/img/down.png" id="podimg" height="20px" width="20px" alt="Подробнее"/></a>
+    </div>
+    <div class="box-3">
+      <img src="D:/OMar/img/img 7.png" height="270px" width="270px" alt="Семга"/>
+      <p>Семга стейк замороженный</p>
+      <p id="OMar">Omar Market</p>
+      <img src="D:/OMar/img/ln.png" id="ln" width="270px" alt="Линия"/>
+      <nav class="table">
+        <nav class="ct1">
+          <p>Вес</p>
+            <p>1 кг.</p>
+        </nav>
+         <nav class="ct2">
+             <p>В ящике</p>
+             <p>3 шт.</p>
+         </nav>
+        <nav class="ct3">
+             <p>Цена</p>
+              <p>4 800₸</p>
+         </nav>
+      </nav>
+      <a href="#" id="pod">Подробнее <img src="D:/OMar/img/down.png" id="podimg" height="20px" width="20px" alt="Подробнее"/></a>
+  </div>
+    <div class="box-4">
+      <tag class="ak1">Акция</tag>
+      <tag class="ten1">-10%</tag>
+      <img src="D:/OMar/img/img 8.png" height="270px" width="270px" alt="Ребра"/>
+      <p>Ребра говяжьи замороженные</p>
+      <p id="OMar">Omar Market</p>
+      <img src="D:/OMar/img/ln.png" id="ln" width="270px" alt="Линия"/>
+      <nav class="table">
+        <nav class="ct1">
+          <p>Вес</p>
+            <p>1 кг.</p>
+        </nav>
+         <nav class="ct2">
+             <p>В ящике</p>
+             <p>2 шт.</p>
+         </nav>
+        <nav class="ct3">
+             <p>Цена</p>
+              <p>9 000₸</p>
+         </nav>
+      </nav>
+      <a href="#" id="pod">Подробнее <img src="D:/OMar/img/down.png" id="podimg" height="20px" width="20px" alt="Подробнее"/></a>
+    </div>    
+</div>
+<h1>Акции<button id="left"><img src="D:\OMar\img\влево.png" height="40px" width="40" alt="1"></button><button id="right"><img src="D:\OMar\img\вправо.png" height="40px" width="40" alt="1"></button></h1>
+    <div class="cont3">
+        <div class="box-1">
+          <tag class="ak1">Акция</tag>
+          <tag class="ten1">-15%</tag> 
+          <tag class="new1">Новинка</tag> 
+            <img src="D:\OMar\img\img1.png" height="270px" width="270px" alt="1">
+            <p>Сок натуральный 100% с мякотью Яблоко-Персик “Сады Придонья”</p>
+            <p id="OMar">Omar Market</p>
+            <img src="D:\OMar\img\ln.png" id="ln" width="270px" alt="1">
+            <nav class="table">
+              <nav class="ct1">
+                <p>Литраж</p>
+                  <p>2 л.</p>
+              </nav>
+               <nav class="ct2">
+                   <p>В ящике</p>
+                   <p>6 шт.</p>
+               </nav>
+              <nav class="ct3">
+                   <p>Цена</p>
+                    <p>2 170₸</p>
+               </nav>
+            </nav>
+            <a href="#" id="pod">Подробнее <img src="D:\OMar\img\down.png" id="podimg" height="20px" width="20px" alt="1"></a>            
+        </div>
+        <div class="box-2">
+          <tag class="ak1">Акция</tag>
+          <tag class="ten1">-10%</tag>
+          <tag class="new1">Хит</tag>
+            <img src="D:\OMar\img\img 3.png" height="270px" width="270px" alt="1">
+            <p>Напиток Coca-Cola</p>
+            <p id="OMar">Omar Market</p>
+            <img src="D:\OMar\img\ln.png" id="ln" width="270px" alt="1">
+            <nav class="table">
+              <nav class="ct1">
+                <p>Литраж</p>
+                  <p>0.5 л.</p>
+              </nav>
+               <nav class="ct2">
+                   <p>В ящике</p>
+                   <p>24 шт.</p>
+               </nav>
+              <nav class="ct3">
+                   <p>Цена</p>
+                    <p>5 400₸</p>
+               </nav>
+            </nav>
+            <a href="#" id="pod">Подробнее <img src="D:\OMar\img\down.png" id="podimg" height="20px" width="20px" alt="1"></a>
+        </div>
+        <div class="box-3">
+          <tag class="ak1">Акция</tag>
+            <img src="D:\OMar\img\img 2.png" height="270px" width="270px" alt="1">
+            <p>Напиток энергетический Gorilla</p>
+            <p id="OMar">Omar Market</p>
+            <img src="D:\OMar\img\ln.png" id="ln" width="270px" alt="1">
+            <nav class="table">
+              <nav class="ct1">
+                <p>Литраж</p>
+                  <p>0.5 л.</p>
+              </nav>
+               <nav class="ct2">
+                   <p>В ящике</p>
+                   <p>24 шт.</p>
+               </nav>
+              <nav class="ct3">
+                   <p>Цена</p>
+                    <p>9 600₸</p>
+               </nav>
+            </nav>
+            <a href="#" id="pod">Подробнее <img src="D:\OMar\img\down.png" id="podimg" height="20px" width="20px" alt="1" ></a>
+        </div>
+        <div class="box-4">
+          <tag class="ak1">Акция</tag>
+          <tag class="ten1">-10%</tag> 
+          <tag class="new1">Хит</tag>
+            <img src="D:\OMar\img\img 9.png" height="270px" width="270px" alt="1">
+            <p>Батончик Snickers</p>
+            <p id="OMar">Omar Market</p>
+            <img src="D:\OMar\img\ln.png" id="ln" width="270px" alt="1">
+            <nav class="table">
+              <nav class="ct1">
+                <p>Вес</p>
+                  <p>50 гр.</p>
+              </nav>
+               <nav class="ct2">
+                   <p>В ящике</p>
+                   <p>24 шт.</p>
+               </nav>
+              <nav class="ct3">
+                   <p>Цена</p>
+                    <p>6 480₸</p>
+               </nav>
+            </nav>
+            <a href="#" id="pod">Подробнее <img src="D:\OMar\img\down.png" id="podimg" height="20px" width="20px" alt="1"></a>
+        </div>
+    </div>
+      <h1>Напитки к новогоднему столу<button id="left"><img src="D:\OMar\img\влево.png" height="40px" width="40" alt="1"></button><button id="right"><img src="D:\OMar\img\вправо.png" height="40px" width="40"alt="1"></button></h1>
+    <div class="cont4">
+        <div class="box-1">
+          <tag class="ak1">Акция</tag>
+          <tag class="ten1">-30%</tag> 
+            <img src="D:\OMar\img\img 4.png" height="270px" width="270px" alt="1">
+            <p>Сок натуральный 100% с мякотью Яблоко-Персик “Сады Придонья”</p>
+            <p id="OMar">Omar Market</p>
+            <img src="D:\OMar\img\ln.png" id="ln" width="270px" alt="1">
+            <nav class="table">
+              <nav class="ct1">
+                <p>Литраж</p>
+                  <p>2 л.</p>
+              </nav>
+               <nav class="ct2">
+                   <p>В ящике</p>
+                   <p>6 шт.</p>
+               </nav>
+              <nav class="ct3">
+                   <p>Цена</p>
+                    <p>2 170₸</p>
+               </nav>
+            </nav>
+            <a href="#" id="pod">Подробнее <img src="D:\OMar\img\down.png" id="podimg" height="20px" width="20px" alt="1" ></a>            
+        </div>
+        <div class="box-2">
+            <img src="D:\OMar\img\img 2.png" height="270px" width="270px" id="img" alt="1">
+            <p>Напиток энергетический Gorilla</p>
+            <p id="OMar">Omar Market</p>
+            <img src="D:\OMar\img\ln.png" id="ln" width="270px" alt="1">
+            <nav class="table">
+              <nav class="ct1">
+                <p>Литраж</p>
+                  <p>0.5 л.</p>
+              </nav>
+               <nav class="ct2">
+                   <p>В ящике</p>
+                   <p>24 шт.</p>
+               </nav>
+              <nav class="ct3">
+                   <p>Цена</p>
+                    <p>9 600₸</p>
+               </nav>
+            </nav>
+            <a href="#" id="pod">Подробнее <img src="D:\OMar\img\down.png" id="podimg" height="20px" width="20px" alt="1"></a>
+        </div>
+        <div class="box-3">
+          <tag class="ak1">Акция</tag>
+          <tag class="ten1">-10%</tag> 
+            <img src="D:\OMar\img\img 4.png" height="270px" width="270px" alt="1">
+            <p>Напиток </p>
+            <p id="OMar">Omar Market</p>
+            <img src="D:\OMar\img\ln.png" id="ln" width="270px" alt="1">
+            <nav class="table">
+              <nav class="ct1">
+                <p>Литраж</p>
+                  <p>0.5 л.</p>
+              </nav>
+               <nav class="ct2">
+                   <p>В ящике</p>
+                   <p>24 шт.</p>
+               </nav>
+              <nav class="ct3">
+                   <p>Цена</p>
+                    <p>9 600₸</p>
+               </nav>
+            </nav>
+            <a href="#" id="pod">Подробнее <img src="D:\OMar\img\down.png" id="podimg" height="20px" width="20px" alt="1" ></a>
+        </div>
+        <div class="box-4">
+            <img src="D:\OMar\img\img 3.png" height="270px" width="270px" alt="1">
+            <p>Напиток Coca-Cola</p>
+            <p id="OMar">Omar Market</p>
+            <img src="D:\OMar\img\ln.png" id="ln" width="270px" alt="1">
+            <nav class="table">
+              <nav class="ct1">
+                <p>Литраж</p>
+                  <p>0.5 л.</p>
+              </nav>
+               <nav class="ct2">
+                   <p>В ящике</p>
+                   <p>24 шт.</p>
+               </nav>
+              <nav class="ct3">
+                   <p>Цена</p>
+                    <p>5 400₸</p>
+               </nav>
+            </nav>
+            <a href="#" id="pod">Подробнее <img src="D:\OMar\img\down.png" id="podimg" height="20px" width="20px" alt="1"></a>
+        </div>
+    </div>
+    <h1>Хиты продаж<button id="left"><img src="D:\OMar\img\влево.png" height="40px" width="40"></button><button id="right" alt="1"><img src="D:\OMar\img\вправо.png" height="40px" width="40" alt="1"></button></h1>
+    <div class="cont5">      
+        <div class="box-1">
+          <tag class="ak1">Акция</tag>
+          <tag class="new2">Хит</tag>
+            <img src="D:\OMar\img\img 3.png" height="270px" width="270px" alt="1">
+            <p>Напиток Coca-Cola</p>
+            <p id="OMar">Omar Market</p>
+            <img src="D:\OMar\img\ln.png" id="ln" width="270px" alt="1">
+            <nav class="table">
+              <nav class="ct1">
+                <p>Литраж</p>
+                  <p>0.5 л.</p>
+              </nav>
+               <nav class="ct2">
+                   <p>В ящике</p>
+                   <p>24 шт.</p>
+               </nav>
+              <nav class="ct3">
+                   <p>Цена</p>
+                    <p>5 600₸</p>
+               </nav>
+            </nav>
+            <a href="#" id="pod">Подробнее <img src="D:\OMar\img\down.png" id="podimg" height="20px" width="20px" alt="1" ></a>
+        </div>
+        <div class="box-2">
+          <tag class="new">Хит</tag>
+            <img src="D:\OMar\img\img 9.png" height="270px" width="270px" alt="1">
+            <p>Батончик Snickers</p>
+            <p id="OMar">Omar Market</p>
+            <img src="D:\OMar\img\ln.png" id="ln" width="270px" alt="1">
+            <nav class="table">
+              <nav class="ct1">
+                <p>Вес</p>
+                  <p>50 гр.</p>
+              </nav>
+               <nav class="ct2">
+                   <p>В ящике</p>
+                   <p>24 шт.</p>
+               </nav>
+              <nav class="ct3">
+                   <p>Цена</p>
+                    <p>7 200₸</p>
+               </nav>
+            </nav>
+            <a href="#" id="pod">Подробнее <img src="D:\OMar\img\down.png" id="podimg" height="20px" width="20px" alt="1"></a>
+        </div>
+        <div class="box-3">
+          <tag class="ak1">Акция</tag>
+          <tag class="new2">Хит</tag>
+            <img src="D:\OMar\img\img1.png" height="270px" width="270px" alt="1">
+            <p>Сок натуральный 100% с мякотью Яблоко-Персик “Сады Придонья”</p>
+            <p id="OMar">Omar Market</p>
+            <img src="D:\OMar\img\ln.png" id="ln" width="270px" alt="1">
+            <nav class="table">
+              <nav class="ct1">
+                <p>Литраж</p>
+                  <p>2 л.</p>
+              </nav>
+               <nav class="ct2">
+                   <p>В ящике</p>
+                   <p>6 шт.</p>
+               </nav>
+              <nav class="ct3">
+                   <p>Цена</p>
+                    <p>2 058₸</p>
+               </nav>
+            </nav>
+            <a href="#" id="pod">Подробнее <img src="D:\OMar\img\down.png" id="podimg" height="20px" width="20px" alt="1" ></a>           
+        </div>
+        <div class="box-4">
+          <tag class="new">Хит</tag>
+            <img src="D:\OMar\img\img 9.png" height="270px" width="270px" alt="1">
+            <p>Батончик Snickers</p>
+            <p id="OMar">Omar Market</p>
+            <img src="D:\OMar\img\ln.png" id="ln" width="270px" alt="1">
+            <nav class="table">
+              <nav class="ct1">
+                <p>Вес</p>
+                  <p>50 гр.</p>
+              </nav>
+               <nav class="ct2">
+                   <p>В ящике</p>
+                   <p>24 шт.</p>
+               </nav>
+              <nav class="ct3">
+                   <p>Цена</p>
+                    <p>9 600₸</p>
+               </nav>
+            </nav>
+            <a href="#" id="pod">Подробнее <img src="D:\OMar\img\down.png" id="podimg" height="20px" width="20px" alt="1"></a>
+    </div>
+</div>
+<form class="form" action="" method="post">
+  <input class="input" type="text" placeholder="Ваше имя" required>
+  <input class="input" type="email" placeholder="Ваш e-mail" required>
+  <input class="input" type="tel" placeholder="Ваш телефон" >
+  <input class="input" type="password" placeholder="Пароль"required>
+  <input class="input" type="password1" placeholder="Пароль еще раз"required>
+  <button class="btn" type="submit">Регистрация</button>
+</form>
+</div>
+<div class="tooltip-block"></div>
+<div class="footer">
+    <div class="footer1">
+      <div class="logo2">
+        <img src="D:\OMar\img\logo 2.png" height="57px" width="140" alt="1"/>       
+           <p>Скачайте наше<br> мобильное приложение</p>
+           <img src="D:\OMar\img\GP.png" height="36px" width="103px" alt="1">
+           <img src="D:\OMar\img\AP.png" height="36px" width="103px" alt="1">
+       </div>
+       <div class="info1" id="tooltip">
+        <ul  class="info1">
+         <li><a href="#" data-tooltip="Подсказка">О компании</a></li>
+         <li><a href="#" data-tooltip="Подсказка">Новости</a></li>
+         <li><a href="#" data-tooltip="Подсказка">Вакансии</a></li>
+         <li><a href="#">Поставщикам</a></li>
+         <li><a href="#">Вопросы и ответы</a></li>
+         </ul>
+      </div>
+     <div class="info2">
+        <ul class="info2">
+         <li> <a href="#">Тех.поддержка</a></li> 
+         <li><a href="#">Политика возврата</a></li> 
+         <li><a href="#">Договор оферты </a></li> 
+         <li><a>График службы доставки:</a></li>
+         <li><a>09:00-20:00</a></li>
+       </ul>
+        </div>
+     <div class="info3">
+         <ul class="info3">
+        <li><a href="#"><img src="D:\OMar\img\email.png"alt="1" >ceo@omar-market.kz</a></li>
+        <li><a href="#"><img src="D:\OMar\img\call.png" alt="1">+7 7132 513 510</a></li>
+        <li><a href="#"><img src="D:\OMar\img\location.png" alt="1">г. Актобе, ул. Назарбаева, 123/1</a></li>
+        <li id="ss"><a href="#"><img src="D:\OMar\img\facebook.png" alt="1"></a>
+        <a href="#"><img src="D:\OMar\img\insta.png" alt="1"></a>
+        <a href="#"><img src="D:\OMar\img\whatsapp.png" alt="1"></a></li>
+       </ul>
+     </div>
+     <div class="z"><button class="app">
+      <a class="app-btn" href="#" ><img src="D:\OMar\img\вверх.png" id="app" width="48" height="48" alt="1"></a>
+     </button>
+    </div>
+     <div class="line"><img src="D:\OMar\img\line.png" id="line" alt="1"></div>
+     </div>
+     
+    <div class="footer2">
+      
+      <div class="pravo">Все права защищены 2021</div>
+      <div class="develop">Разработано Digital Agency Nidge</div>
+    </div>
+     
+  </div>
+</body>
+</html>
